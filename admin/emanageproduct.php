@@ -111,7 +111,8 @@ $msg="Product deleted successfully";
 										<tr>
 										<th>#</th>
 											<th>Product name</th>
-											<th>Category </th>
+										
+											<th>Category</th>
 											<th>Price</th>
 											<th>Stock</th>
 											<th>Action</th>
@@ -121,6 +122,7 @@ $msg="Product deleted successfully";
 										<tr>
 										<th>#</th>
 										<th>Product name</th>
+							
 											<th>Category</th>
 											<th>Price</th>
 											<th>stock</th>
@@ -132,6 +134,7 @@ $msg="Product deleted successfully";
 
 <?php 
 $sql = "select product.*,procategory.* from product join procategory on procategory.catid=product.catid";
+//$sql="select distinct(p.pid),productname,bname,procatname,price,stock from product p,procategory c,brand b";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);

@@ -147,12 +147,32 @@ foreach($results as $result)
 
 </select>
 </div>
+
+
 </div>
-											
+
+<label class="col-sm-2 control-label">Select Brand<span style="color:red">*</span></label>
+<div class="col-sm-4">
+<select class="selectpicker" name="cn" required>
+<option value=""> Select </option>
+<?php $ret="select bid,bname from brand";
+$query= $dbh -> prepare($ret);
+//$query->bindParam(':catid',$catid, PDO::PARAM_STR);
+$query-> execute();
+$results = $query -> fetchAll(PDO::FETCH_OBJ);
+if($query -> rowCount() > 0)
+{
+foreach($results as $result)
+{
+?>
+<option value="<?php echo htmlentities($result->bid);?>"><?php echo htmlentities($result->bname);?></option>
+<?php }} ?>
+
+</select>
+</div>
+
+</br>											
 <div class="hr-dashed"></div>
-
-
-
 
 <div class="form-group">
 <label class="col-sm-2 control-label">Product Description<span style="color:red">*</span></label>

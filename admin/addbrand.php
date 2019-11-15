@@ -10,16 +10,20 @@ else{
 // Code for change password	
 if(isset($_POST['submit']))
 {
-$category=$_POST['category'];
-$id=$_GET['id'];
-$sql="update  procategory set procatname=:category where catid=:id";
+$brand=$_POST['brand'];
+$sql="INSERT INTO  brand(bname) VALUES(:brand)";
 $query = $dbh->prepare($sql);
-$query->bindParam(':category',$category,PDO::PARAM_STR);
-$query->bindParam(':id',$id,PDO::PARAM_STR);
+$query->bindParam(':brand',$brand,PDO::PARAM_STR);
 $query->execute();
 $lastInsertId = $dbh->lastInsertId();
-
-$msg="Category updated successfully";
+if($lastInsertId)
+{
+$msg="Brand added successfully";
+}
+else 
+{
+$error="Something went wrong. Please try again";
+}
 
 }
 ?>
@@ -35,7 +39,7 @@ $msg="Category updated successfully";
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>Online Shopping | Admin Edit Category</title>
+	<title>Online Shopping | Admin Create Category</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -85,7 +89,7 @@ $msg="Category updated successfully";
 				<div class="row">
 					<div class="col-md-12">
 					
-						<h2 class="page-title">Edit Category</h2>
+						<h2 class="page-title">Add Brand</h2>
 
 						<div class="row">
 							<div class="col-md-10">
@@ -97,36 +101,21 @@ $msg="Category updated successfully";
 											
   	        	  <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
 				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
-
-<?php	
-$id=$_GET['id'];
-$ret="select * from procategory where catid=:id";
-$query= $dbh -> prepare($ret);
-$query->bindParam(':id',$id, PDO::PARAM_STR);
-$query-> execute();
-$results = $query -> fetchAll(PDO::FETCH_OBJ);
-$cnt=1;
-if($query -> rowCount() > 0)
-{
-foreach($results as $result)
-{
-?>
-
 											<div class="form-group">
-												<label class="col-sm-4 control-label">Category Name</label>
+												<label class="col-sm-4 control-label">Brand Name</label>
 												<div class="col-sm-8">
-													<input type="text" class="form-control" value="<?php echo htmlentities($result->procatname);?>" name="category" id="category" required>
+													<input type="text" class="form-control" name="brand" id="brand" required>
 												</div>
 											</div>
 											<div class="hr-dashed"></div>
 											
-										<?php }} ?>
+										
 								
 											
 											<div class="form-group">
 												<div class="col-sm-8 col-sm-offset-4">
 								
-													<button class="btn btn-primary" name="submit" type="submit">Edit</button>
+													<button class="btn btn-primary" name="submit" type="submit">Add</button>
 												</div>
 											</div>
 

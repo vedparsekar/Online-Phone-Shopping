@@ -87,17 +87,17 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
 
       $pid=$row['pid'];
-         echo "<tr><td class='shrin'><a href='single.php?id=$pid'><img src='admin/proimg/".$row['picture1']."' height=30px width=30px/></a></td><td>". $row["productname"]."&nbsp&nbsp"."<br/><small>".$row["stock"]."</small>";
+         echo "<tr><td class='shrin'><a href='single.php?id=$pid'><img src='admin/proimg/".$row['picture1']."' height=100px width=150px/></a></td><td>". $row["productname"]."&nbsp&nbsp"."<br/><small>Rs ".$row["price"]."</small></td>";
       
 
 
          //"</td><td  align='right'><a href='music.php?id=$sid'><button type=button class='btn btn-xs'><span class='glyphicon glyphicon-play'></span> PLAY</button></a></td>";
 		 
 		 if($_SESSION['login']){
-		 echo"<form action='addcart.php?p=$pid' method='POST'><input type='number' value='1' min='1' max='10' name='quan' class='item_addd'/><br/><input type='submit' class='btn btn-xs' name='ADD' value='ADD TO CART'></form>";
+		 echo"<td><form action='addcart.php?p=$pid' method='POST'><input type='number' value='1' min='1' max='10' name='quan' class='item_addd'/><br/><input type='submit' class='btn btn-xs' name='ADD' value='ADD TO CART'></form></td>";
 		 }
 		 else{
-									echo'<td><a href="#loginform" data-toggle="modal" data-dismiss="modal"><button type=button class="btn btn-xs"><span class="glyphicon glyphicon-download-alt"></span> DOWNLOAD</button></a></td></tr>';
+									echo'<td><a href="#loginform" data-toggle="modal" data-dismiss="modal"><button type=button class="btn btn-xs"><span class="glyphicon glyphicon-shopping-cart"> </span> ADD TO CART</button></a></td></tr>';
 			}
 
     }

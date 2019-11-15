@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 14, 2019 at 06:43 AM
+-- Generation Time: Nov 15, 2019 at 12:30 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.0.25
 
@@ -56,9 +56,19 @@ INSERT INTO `admin` (`id`, `UserName`, `Password`, `UpdatingDate`, `adming`, `as
 --
 
 CREATE TABLE `brand` (
-  `bid` varchar(5) NOT NULL,
+  `bid` int(5) NOT NULL,
   `bname` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `brand`
+--
+
+INSERT INTO `brand` (`bid`, `bname`) VALUES
+(1, 'Nokia'),
+(3, 'Samsung'),
+(4, 'Xaomi'),
+(5, 'Apple');
 
 -- --------------------------------------------------------
 
@@ -158,10 +168,10 @@ CREATE TABLE `procategory` (
 INSERT INTO `procategory` (`catid`, `procatname`) VALUES
 (1, 'Phones'),
 (2, 'HeadPhones'),
-(3, 'Cases'),
 (4, 'PowerBanks'),
 (5, 'Chargers'),
-(6, 'Speakers');
+(6, 'Speakers'),
+(7, 'Cases');
 
 -- --------------------------------------------------------
 
@@ -178,6 +188,7 @@ CREATE TABLE `product` (
   `picture1` varchar(200) NOT NULL,
   `picture2` varchar(200) NOT NULL,
   `catid` int(11) NOT NULL,
+  `bid` int(5) NOT NULL,
   `stock` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -185,19 +196,19 @@ CREATE TABLE `product` (
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`pid`, `productname`, `productdescription`, `price`, `picture`, `picture1`, `picture2`, `catid`, `stock`) VALUES
-(33, 'Iphone 11 Pro', 'SIM Type - Dual Sim\r\nDisplay Size - 14.73 cm (5.8 inch)\r\nResolution- 2436 x 1125 Pixels Super Retina XDR Display\r\nOperating System- iOS 13\r\nProcessor Type- A13 Bionic Chip\r\nInternal Storage- 64 GB\r\nPr', 99000, 'apple-iphone-11-pro.jpeg', 'apple-iphone-11-pro-mwc62hn-a-original-imafkg2ftc5cze5n.jpeg', 'apple-iphone-11-prowhite.jpeg', 1, 20),
-(34, 'iphone X', '\r\n256 GB ROM |\r\n14.73 cm (5.8 inch) Super Retina HD Display\r\n12MP + 12MP | 7MP Front Camera\r\nA11 Bionic Chip with 64-bit Architecture, Neural Engine, Embedded M11 Motion Coprocessor Processor', 79000, 'apple-iphone-x-mqa62hn-a-original-imaeyzyfdzhfckef.jpeg', 'apple-iphone-x-mqa92hn-a-original-imaeyzzvaqggkygg.jpeg', 'apple-iphone-x-mqa62hn-a-original-imaeyysgjbe3qzwz.jpeg', 1, 10),
-(35, 'samsung s10 plus', '8 GB RAM | 512 GB ROM | Expandable Upto 512 GB\r\n16.26 cm (6.4 inch) Quad HD+ Display\r\n16MP + 12MP | 10MP + 8MP Dual Front Camera\r\n4100 mAh Lithium-ion Battery\r\nExynos 9 9820 Processor', 87000, 'samsung-galaxy-s10-plus-sm-g975fckgins-original-imafdys4d6h8phu6.jpeg', 'samsung-galaxy-s10-plus-sm-g975fckgins-original-imafdys4e9mgrkxf.jpeg', 'samsung-galaxy-s10-plus-sm-g975fckgins-original-imafdys4uyzvpggy.jpeg', 1, 20),
-(36, 'Samsung note 10 plus', '\r\n12 GB RAM | 512 GB ROM | Expandable Upto 1 TB\r\n17.27 cm (6.8 inch) Display\r\n12MP (Dual Aperture) + 12MP + 16MP + TOF | 10MP Front Camera\r\n4300 mAh Battery', 89, 'samsung-galaxy-note-10-plus-sm-n975fzkgins-original-imafj58jterypsdq.jpeg', 'samsung-galaxy-note-10-plus-sm-n975fzkgins-original-imafj58j4huvagbd.jpeg', 'samsung-galaxy-note-10-plus-sm-n975fzkgins-original-imafj58jqyyhtzzj.jpeg', 1, 20),
-(39, 'Nokia 9', '6 GB RAM | 128 GB ROM |\r\n15.21 cm (5.99 inch) QHD+ Display\r\n5 x 12MP | 20MP Front Camera\r\n3320 mAh Battery\r\nQualcomm Snapdragon 845 Processor', 49999, 'nokia-9-ta-1087-ds-original-imafg98ny4rn7gcq.jpeg', 'nokia-9-ta-1087-ds-original-imafg98nken2dhmh.jpeg', 'nokia-9-ta-1087-ds-original-imafg98nn9f3tykq.jpeg', 1, 20),
-(40, 'Nokia 6.1', '6 GB RAM | 64 GB ROM | Expandable Upto 400 GB\r\n14.73 cm (5.8 inch) FHD+ Display\r\n16MP + 5MP | 16MP Front Camera\r\n3060 mAh Battery\r\nQualcomm Snapdragon 636 Octacore Processor', 11999, 'nokia-6-1-na-original-imaf892ev4nr8mps.jpeg', 'nokia-6-1-na-original-imaf892exbgttdpe.jpeg', 'nokia-6-1-plus-na-original-imaf892egmfsuzz7.jpeg', 1, 20),
-(41, 'Redmi K20 pro', '\r\n6 GB RAM | 128 GB ROM |\r\n16.23 cm (6.39 inch) FHD+ Display\r\n48MP + 13MP + 8MP | 20MP Front Camera\r\n4000 mAh Li-polymer Battery\r\nQualcomm Snapdragon 855 Processor', 25999, 'redmi-k20-pro-mzb7749in-original-imafghynfg4hvywn.jpeg', 'redmi-k20-pro-mzb7749in-original-imafghynfxsxtvd4.jpeg', 'redmi-k20-pro-na-original-imafgb4ydbdgu7pm.jpeg', 1, 20),
-(43, 'Bose Headphone', 'With Mic:Yes\r\nBluetooth version: 4.1\r\nWireless range: 9 m\r\nBattery life: 15 hrs | Charging time: 3 hrs\r\nHigh audio quality at both lower and higher volumes', 9999, 'bose-soundlink-around-ear-ii-original-imaefjsqwhfvvcsm.jpeg', 'bose-soundlink-around-ear-ii-original-imaefy4cskkkj9dh.jpeg', 'bose-soundlink-around-ear-ii-original-imafkn7cfpchrbfu.jpeg', 2, 10),
-(44, 'Skullcandy  Bluetooth Headset ', 'With Mic:Yes\r\nBluetooth version: 4.1\r\nWireless range: 33 Feet\r\nBattery life: 8 hrs | Charging time: 2 hrs\r\nFoldable/ Collapsible: Designed for people always on the move, easy storage and easy to carry', 2099, 'skullcandy-s2ikw-j509-original-imaf97gxddnknjkh.jpeg', 'skullcandy-s2ikw-j509-original-imaf9n9gfwfhyxeh.jpeg', 'skullcandy-s2ikw-j509-original-imaf9n9grbgwsfxh.jpeg', 2, 10),
-(45, 'Apple airpods', '\r\nWith Mic:Yes\r\nConnector type: No\r\nQuick access to Siri by saying \"Hey Siri\"\r\nEasy setup for all your Apple devices\r\nRich, high-quality audio and voice', 11000, 'apple-mv7n2hn-a-original-imaff78z59efb54q.jpeg', 'apple-mv7n2hn-a-original-imaff78zpgffkkxj.jpeg', 'techobucks-i12s-tws-pro-plus-touch-sensor-bt-5-0-earphone-original-imafkqhzfbca7w3k.jpeg', 2, 10),
-(46, 'samsung note 10 plus case', '\r\nSuitable For: Mobile\r\nMaterial: Plastic, Rubber, Fiber, Silicon, Polycarbonate\r\nTheme: No Theme\r\nType: Back Cover', 300, 'cellcampus-aft-14398-original-imafkfwp3dsjbmng.jpeg', 'cellcampus-aft-14395-original-imafcrm7ykcnbqyz.jpeg', 'cellcampus-aft-14393-original-imafkfwpwyvgesep.jpeg', 3, 10),
-(48, 'boAt BassHeads 220 Super Extra', 'With Mic:Yes\r\nConnector type: 3.5mm headphone jack\r\nFlatwire: Stays tangle free even in your pocket\r\nExtra bass: Add extra thump to your music\r\nOne button universal remote to answer and manage your ca', 500, 'boat-bassheads-220-super-extra-bass-original-imaf52pyuyqabbuh.jpeg', 'boat-bassheads-220-super-extra-bass-original-imafj4f5gkefjsnh.jpeg', 'boat-bassheads-220-super-extra-bass-original-imafj4f6yfbmfbb9.jpeg', 2, 10);
+INSERT INTO `product` (`pid`, `productname`, `productdescription`, `price`, `picture`, `picture1`, `picture2`, `catid`, `bid`, `stock`) VALUES
+(33, 'Iphone 11 Pro', 'SIM Type - Dual Sim\r\nDisplay Size - 14.73 cm (5.8 inch)\r\nResolution- 2436 x 1125 Pixels Super Retina XDR Display\r\nOperating System- iOS 13\r\nProcessor Type- A13 Bionic Chip\r\nInternal Storage- 64 GB\r\nPr', 99000, 'apple-iphone-11-pro.jpeg', 'apple-iphone-11-pro-mwc62hn-a-original-imafkg2ftc5cze5n.jpeg', 'apple-iphone-11-prowhite.jpeg', 1, 5, 20),
+(34, 'iphone X', '256 GB ROM |\r\n14.73 cm (5.8 inch) Super Retina HD Display\r\n12MP + 12MP | 7MP Front Camera\r\nA11 Bionic Chip with 64-bit Architecture, Neural Engine, Embedded M11 Motion Coprocessor Processor', 79000, 'apple-iphone-x-mqa62hn-a-original-imaeyzyfdzhfckef.jpeg', 'apple-iphone-x-mqa92hn-a-original-imaeyzzvaqggkygg.jpeg', 'apple-iphone-x-mqa62hn-a-original-imaeyysgjbe3qzwz.jpeg', 1, 5, 10),
+(35, 'samsung s10 plus', '8 GB RAM | 512 GB ROM | Expandable Upto 512 GB\r\n16.26 cm (6.4 inch) Quad HD+ Display\r\n16MP + 12MP | 10MP + 8MP Dual Front Camera\r\n4100 mAh Lithium-ion Battery\r\nExynos 9 9820 Processor', 87000, 'samsung-galaxy-s10-plus-sm-g975fckgins-original-imafdys4d6h8phu6.jpeg', 'samsung-galaxy-s10-plus-sm-g975fckgins-original-imafdys4e9mgrkxf.jpeg', 'samsung-galaxy-s10-plus-sm-g975fckgins-original-imafdys4uyzvpggy.jpeg', 1, 3, 20),
+(36, 'Samsung note 10 plus', '\r\n12 GB RAM | 512 GB ROM | Expandable Upto 1 TB\r\n17.27 cm (6.8 inch) Display\r\n12MP (Dual Aperture) + 12MP + 16MP + TOF | 10MP Front Camera\r\n4300 mAh Battery', 89, 'samsung-galaxy-note-10-plus-sm-n975fzkgins-original-imafj58jterypsdq.jpeg', 'samsung-galaxy-note-10-plus-sm-n975fzkgins-original-imafj58j4huvagbd.jpeg', 'samsung-galaxy-note-10-plus-sm-n975fzkgins-original-imafj58jqyyhtzzj.jpeg', 1, 0, 20),
+(39, 'Nokia 9', '6 GB RAM | 128 GB ROM |\r\n15.21 cm (5.99 inch) QHD+ Display\r\n5 x 12MP | 20MP Front Camera\r\n3320 mAh Battery\r\nQualcomm Snapdragon 845 Processor', 49999, 'nokia-9-ta-1087-ds-original-imafg98ny4rn7gcq.jpeg', 'nokia-9-ta-1087-ds-original-imafg98nken2dhmh.jpeg', 'nokia-9-ta-1087-ds-original-imafg98nn9f3tykq.jpeg', 1, 0, 20),
+(40, 'Nokia 6.1', '6 GB RAM | 64 GB ROM | Expandable Upto 400 GB\r\n14.73 cm (5.8 inch) FHD+ Display\r\n16MP + 5MP | 16MP Front Camera\r\n3060 mAh Battery\r\nQualcomm Snapdragon 636 Octacore Processor', 11999, 'nokia-6-1-na-original-imaf892ev4nr8mps.jpeg', 'nokia-6-1-na-original-imaf892exbgttdpe.jpeg', 'nokia-6-1-plus-na-original-imaf892egmfsuzz7.jpeg', 1, 0, 20),
+(41, 'Redmi K20 pro', '\r\n6 GB RAM | 128 GB ROM |\r\n16.23 cm (6.39 inch) FHD+ Display\r\n48MP + 13MP + 8MP | 20MP Front Camera\r\n4000 mAh Li-polymer Battery\r\nQualcomm Snapdragon 855 Processor', 25999, 'redmi-k20-pro-mzb7749in-original-imafghynfg4hvywn.jpeg', 'redmi-k20-pro-mzb7749in-original-imafghynfxsxtvd4.jpeg', 'redmi-k20-pro-na-original-imafgb4ydbdgu7pm.jpeg', 1, 0, 20),
+(43, 'Bose Headphone', 'With Mic:Yes\r\nBluetooth version: 4.1\r\nWireless range: 9 m\r\nBattery life: 15 hrs | Charging time: 3 hrs\r\nHigh audio quality at both lower and higher volumes', 9999, 'bose-soundlink-around-ear-ii-original-imaefjsqwhfvvcsm.jpeg', 'bose-soundlink-around-ear-ii-original-imaefy4cskkkj9dh.jpeg', 'bose-soundlink-around-ear-ii-original-imafkn7cfpchrbfu.jpeg', 2, 0, 10),
+(44, 'Skullcandy  Bluetooth Headset ', 'With Mic:Yes\r\nBluetooth version: 4.1\r\nWireless range: 33 Feet\r\nBattery life: 8 hrs | Charging time: 2 hrs\r\nFoldable/ Collapsible: Designed for people always on the move, easy storage and easy to carry', 2099, 'skullcandy-s2ikw-j509-original-imaf97gxddnknjkh.jpeg', 'skullcandy-s2ikw-j509-original-imaf9n9gfwfhyxeh.jpeg', 'skullcandy-s2ikw-j509-original-imaf9n9grbgwsfxh.jpeg', 2, 0, 10),
+(45, 'Apple airpods', '\r\nWith Mic:Yes\r\nConnector type: No\r\nQuick access to Siri by saying \"Hey Siri\"\r\nEasy setup for all your Apple devices\r\nRich, high-quality audio and voice', 11000, 'apple-mv7n2hn-a-original-imaff78z59efb54q.jpeg', 'apple-mv7n2hn-a-original-imaff78zpgffkkxj.jpeg', 'techobucks-i12s-tws-pro-plus-touch-sensor-bt-5-0-earphone-original-imafkqhzfbca7w3k.jpeg', 2, 0, 10),
+(46, 'samsung note 10 plus case', '\r\nSuitable For: Mobile\r\nMaterial: Plastic, Rubber, Fiber, Silicon, Polycarbonate\r\nTheme: No Theme\r\nType: Back Cover', 300, 'cellcampus-aft-14398-original-imafkfwp3dsjbmng.jpeg', 'cellcampus-aft-14395-original-imafcrm7ykcnbqyz.jpeg', 'cellcampus-aft-14393-original-imafkfwpwyvgesep.jpeg', 7, 0, 10),
+(48, 'boAt BassHeads 220 Super Extra', 'With Mic:Yes\r\nConnector type: 3.5mm headphone jack\r\nFlatwire: Stays tangle free even in your pocket\r\nExtra bass: Add extra thump to your music\r\nOne button universal remote to answer and manage your ca', 500, 'boat-bassheads-220-super-extra-bass-original-imaf52pyuyqabbuh.jpeg', 'boat-bassheads-220-super-extra-bass-original-imafj4f5gkefjsnh.jpeg', 'boat-bassheads-220-super-extra-bass-original-imafj4f6yfbmfbb9.jpeg', 2, 0, 10);
 
 -- --------------------------------------------------------
 
@@ -337,6 +348,12 @@ ALTER TABLE `admin`
   MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
+-- AUTO_INCREMENT for table `brand`
+--
+ALTER TABLE `brand`
+  MODIFY `bid` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `chat`
 --
 ALTER TABLE `chat`
@@ -358,7 +375,7 @@ ALTER TABLE `payment`
 -- AUTO_INCREMENT for table `procategory`
 --
 ALTER TABLE `procategory`
-  MODIFY `catid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `catid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `product`

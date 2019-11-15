@@ -44,6 +44,14 @@ else{
 <li><a href="manage-cat.php">Manage Categories</a></li>
 </ul>
 </li>
+
+<li><a href="#"><i class="fa fa-files-o"></i> Brands</a>
+<ul>
+<li><a href="addbrand.php">Add Brand</a></li>
+<li><a href="managebrand.php">Manage Brands</a></li>
+</ul>
+</li>
+
 				
 				<li><a href="#"><i class="fa fa-sitemap"></i> Contact Us Queries</a>
 					<ul>

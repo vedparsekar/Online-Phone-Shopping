@@ -7,22 +7,20 @@ if(strlen($_SESSION['alogin'])==0)
 header('location:index.php');
 }
 else{
-// Code for change password	
-if(isset($_POST['submit']))
+if(isset($_GET['del']))
 {
-$category=$_POST['category'];
-$id=$_GET['id'];
-$sql="update  procategory set procatname=:category where catid=:id";
+$id=$_GET['del'];
+$sql = "delete from brand  WHERE bid=:id";
 $query = $dbh->prepare($sql);
-$query->bindParam(':category',$category,PDO::PARAM_STR);
-$query->bindParam(':id',$id,PDO::PARAM_STR);
-$query->execute();
-$lastInsertId = $dbh->lastInsertId();
-
-$msg="Category updated successfully";
+$query -> bindParam(':id',$id, PDO::PARAM_STR);
+$query -> execute();
+$msg="Deleted successfully";
 
 }
-?>
+
+
+
+ ?>
 
 <!doctype html>
 <html lang="en" class="no-js">
@@ -35,7 +33,7 @@ $msg="Category updated successfully";
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>Online Shopping | Admin Edit Category</title>
+	<title>Online Shopping Portal |Admin Manage Brands   </title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -70,80 +68,95 @@ $msg="Category updated successfully";
     -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
     box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
 }
-		</style>
 
+::-webkit-scrollbar {
+    height: 3px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f2f2f2; 
+}
+ 
+::-webkit-scrollbar-thumb {
+    background:  #cccccc; 
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+		</style>
 
 </head>
 
 <body>
 	<?php include('includes/header.php');?>
+
 	<div class="ts-main-content">
-	<?php include('includes/leftbar.php');?>
+		<?php include('includes/leftbar.php');?>
 		<div class="content-wrapper">
 			<div class="container-fluid">
 
 				<div class="row">
 					<div class="col-md-12">
-					
-						<h2 class="page-title">Edit Category</h2>
 
-						<div class="row">
-							<div class="col-md-10">
-								<div class="panel panel-default">
-									<div class="panel-heading">Form fields</div>
-									<div class="panel-body">
-										<form method="post" name="chngpwd" class="form-horizontal" onSubmit="return valid();">
-										
-											
-  	        	  <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
+						<h2 class="page-title">Manage Brands</h2>
+
+						<!-- Zero Configuration Table -->
+						<div class="panel panel-default">
+							<div class="panel-heading">Brands</div>
+							<div class="panel-body">
+							<?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
 				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
+						<div style='overflow-y:auto;'>	
+						<table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+									<thead>
+										<tr>
+										<th>#</th>
+											<th>Brand Name</th>
+											<th>Action</th>
+										</tr>
+									</thead>
+									<tfoot>
+										<tr>
+										<th>#</th>
+											<th>Brand Name</th>
+											<th>Action</th>
+										</tr>
+										</tr>
+									</tfoot>
+									<tbody>
 
-<?php	
-$id=$_GET['id'];
-$ret="select * from procategory where catid=:id";
-$query= $dbh -> prepare($ret);
-$query->bindParam(':id',$id, PDO::PARAM_STR);
-$query-> execute();
-$results = $query -> fetchAll(PDO::FETCH_OBJ);
+<?php $sql = "SELECT * from  brand ";
+$query = $dbh -> prepare($sql);
+$query->execute();
+$results=$query->fetchAll(PDO::FETCH_OBJ);
 $cnt=1;
-if($query -> rowCount() > 0)
+if($query->rowCount() > 0)
 {
 foreach($results as $result)
-{
-?>
-
-											<div class="form-group">
-												<label class="col-sm-4 control-label">Category Name</label>
-												<div class="col-sm-8">
-													<input type="text" class="form-control" value="<?php echo htmlentities($result->procatname);?>" name="category" id="category" required>
-												</div>
-											</div>
-											<div class="hr-dashed"></div>
-											
-										<?php }} ?>
-								
-											
-											<div class="form-group">
-												<div class="col-sm-8 col-sm-offset-4">
-								
-													<button class="btn btn-primary" name="submit" type="submit">Edit</button>
-												</div>
-											</div>
-
-										</form>
-
-									</div>
-								</div>
-							</div>
-							
-						</div>
+{				?>	
+										<tr>
+											<td><?php echo htmlentities($cnt);?></td>
+											<td><?php echo htmlentities($result->bname);?></td>
+<td><a href="editbrand.php?id=<?php echo $result->bid;?>"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;
+<a href="managebrand.php?del=<?php echo $result->bid;?>" onclick="return confirm('Do you want to delete');"><i class="fa fa-close"></i></a></td>
+										</tr>
+										<?php $cnt=$cnt+1; }} ?>
+										
+									</tbody>
+								</table>
+</div>
 						
+
+							</div>
+						</div>
+
 					
 
 					</div>
 				</div>
-				
-			
+
 			</div>
 		</div>
 	</div>
@@ -158,8 +171,6 @@ foreach($results as $result)
 	<script src="js/fileinput.js"></script>
 	<script src="js/chartData.js"></script>
 	<script src="js/main.js"></script>
-
 </body>
-
 </html>
 <?php } ?>

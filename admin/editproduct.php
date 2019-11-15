@@ -12,15 +12,17 @@ if(isset($_POST['submit']))
   {
 $proname=$_POST['proname'];
 $cn=$_POST['cn'];
+$br=$_POST['br'];
 $desc=$_POST['desc'];
 $price=$_POST['price'];
 $st=$_POST['st'];
 $id=intval($_GET['id']);
 
-$sql="update product set productname=:proname,catid=:cn,productdescription=:desc,price=:price,stock=:st where pid=:id ";
+$sql="update product set productname=:proname,catid=:cn,bid=:br,productdescription=:desc,price=:price,stock=:st where pid=:id ";
 $query = $dbh->prepare($sql);
 $query->bindParam(':proname',$proname,PDO::PARAM_STR);
 $query->bindParam(':cn',$cn,PDO::PARAM_STR);
+$query->bindParam(':br',$br,PDO::PARAM_STR);
 $query->bindParam(':desc',$desc,PDO::PARAM_STR);
 $query->bindParam(':price',$price,PDO::PARAM_STR);
 $query->bindParam(':st',$st,PDO::PARAM_STR);
@@ -47,7 +49,7 @@ $msg="Data updated successfully";
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>Online Shopping | Admin Edit Songs Info</title>
+	<title>Online Shopping | Admin Edit Products</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -125,7 +127,7 @@ foreach($results as $result)
 <label class="col-sm-2 control-label">Select Category<span style="color:red">*</span></label>
 <div class="col-sm-4">
 <select class="selectpicker" name="cn" required>
-<option value="<?php echo htmlentities($result->catid);?>"><?php echo htmlentities($ctname=$result->procatname); ?> </option>
+<option value="<?php echo htmlentities($results->catid);?>"><?php echo htmlentities($ctname=$results->procatname); ?> </option>
 <?php $ret="select catid,procatname from procategory";
 $query= $dbh -> prepare($ret);
 //$query->bindParam(':id',$id, PDO::PARAM_STR);
@@ -146,6 +148,34 @@ continue;
 </select>
 </div>
 </div>
+
+
+<label class="col-sm-2 control-label">Select Brand<span style="color:red">*</span></label>
+<div class="col-sm-4">
+<select class="selectpicker" name="br" required>
+<option value="<?php echo htmlentities($results->bid);?>"><?php echo htmlentities($btname=$results->bname);?> </option>
+<?php $ret="select bid,bname from brand";
+$query= $dbh -> prepare($ret);
+//$query->bindParam(':id',$id, PDO::PARAM_STR);
+$query-> execute();
+$resultss = $query -> fetchAll(PDO::FETCH_OBJ);
+if($query -> rowCount() > 0)
+{
+foreach($resultss as $results)
+{
+if($results->bname==$btname)
+{
+continue;
+} else{
+?>
+<option value="<?php echo htmlentities($results->bid);?>"><?php echo htmlentities($results->bname);?></option>
+<?php }}} ?>
+
+</select>
+</div>
+</br>
+
+
 											
 <div class="hr-dashed"></div>
 <div class="form-group">
