@@ -207,7 +207,7 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
 		  $c=$row['pid']; 
 			 echo'<div class="col-md-3 feature-grid">'.
-				 "<a href='single.php?id=$c'>".'<img src="admin/proimg/'.$row["picture"].'" style="height:260px;" />	
+				 "<a href='single.php?id=$c'>".'<img src="admin/proimg/'.$row["picture"].'" style="height:340px;" />	
 					 <div class="arrival-info">
 						 <h4>'.$row["productname"].'</h4>
 						 <p>Rs '.$row["price"].'</p>
@@ -273,7 +273,7 @@ echo'<div class="clearfix"></div><a href="product.php?id=2"><button type=button 
 echo '<br/><h5>Cases</h5>
 		 <div class="items-sec btm-sec">';		 
 			 
-	$sql = "SELECT * FROM product where catid=3 order by catid desc limit 4";
+	$sql = "SELECT * FROM product where catid=7 order by catid desc limit 4";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -327,7 +327,7 @@ if ($result->num_rows > 0) {
 		
 		 $c=$row['pid']; 
 			 echo'<div class="col-md-3 feature-grid">'.
-				 "<a href='single.php?id=$c'>".'<img src="admin/proimg/'.$row["picture"].'" style="height:260px;" />
+				 "<a href='single.php?id=$c'>".'<img src="admin/proimg/'.$row["picture"].'" style="height:360px;" />
 					 <div class="arrival-info">
 						  <h4>'.$row["productname"].'</h4>
 						 <p>Rs '.$row["price"].'</p>
@@ -397,7 +397,7 @@ echo'<div class="clearfix"></div><a href="product.php?id=4"><button type=button 
 echo '<br/><h5>Speakers</h5>
 		 <div class="items-sec btm-sec">';		 
 			 
-	$sql = "SELECT * FROM product where catid=4 order by catid desc limit 4";
+	$sql = "SELECT * FROM product where catid=6 order by catid desc limit 4";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -410,7 +410,7 @@ if ($result->num_rows > 0) {
 		
 		 $c=$row['pid']; 
 			 echo'<div class="col-md-3 feature-grid">'.
-				 "<a href='single.php?id=$c'>".'<img src="admin/proimg/'.$row["picture"].'" style="height:260px;" />
+				 "<a href='single.php?id=$c'>".'<img src="admin/proimg/'.$row["picture"].'" style="height:380px;" />
 					 <div class="arrival-info">
 						  <h4>'.$row["productname"].'</h4>
 						 <p>Rs '.$row["price"].'</p>

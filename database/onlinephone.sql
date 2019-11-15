@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 15, 2019 at 12:30 PM
+-- Generation Time: Nov 15, 2019 at 07:58 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.0.25
 
@@ -68,7 +68,13 @@ INSERT INTO `brand` (`bid`, `bname`) VALUES
 (1, 'Nokia'),
 (3, 'Samsung'),
 (4, 'Xaomi'),
-(5, 'Apple');
+(5, 'Apple'),
+(6, 'Google'),
+(7, 'Boat'),
+(8, 'Syska'),
+(9, 'Philips'),
+(10, 'Sony'),
+(11, 'JBL');
 
 -- --------------------------------------------------------
 
@@ -208,7 +214,18 @@ INSERT INTO `product` (`pid`, `productname`, `productdescription`, `price`, `pic
 (44, 'Skullcandy  Bluetooth Headset ', 'With Mic:Yes\r\nBluetooth version: 4.1\r\nWireless range: 33 Feet\r\nBattery life: 8 hrs | Charging time: 2 hrs\r\nFoldable/ Collapsible: Designed for people always on the move, easy storage and easy to carry', 2099, 'skullcandy-s2ikw-j509-original-imaf97gxddnknjkh.jpeg', 'skullcandy-s2ikw-j509-original-imaf9n9gfwfhyxeh.jpeg', 'skullcandy-s2ikw-j509-original-imaf9n9grbgwsfxh.jpeg', 2, 0, 10),
 (45, 'Apple airpods', '\r\nWith Mic:Yes\r\nConnector type: No\r\nQuick access to Siri by saying \"Hey Siri\"\r\nEasy setup for all your Apple devices\r\nRich, high-quality audio and voice', 11000, 'apple-mv7n2hn-a-original-imaff78z59efb54q.jpeg', 'apple-mv7n2hn-a-original-imaff78zpgffkkxj.jpeg', 'techobucks-i12s-tws-pro-plus-touch-sensor-bt-5-0-earphone-original-imafkqhzfbca7w3k.jpeg', 2, 0, 10),
 (46, 'samsung note 10 plus case', '\r\nSuitable For: Mobile\r\nMaterial: Plastic, Rubber, Fiber, Silicon, Polycarbonate\r\nTheme: No Theme\r\nType: Back Cover', 300, 'cellcampus-aft-14398-original-imafkfwp3dsjbmng.jpeg', 'cellcampus-aft-14395-original-imafcrm7ykcnbqyz.jpeg', 'cellcampus-aft-14393-original-imafkfwpwyvgesep.jpeg', 7, 0, 10),
-(48, 'boAt BassHeads 220 Super Extra', 'With Mic:Yes\r\nConnector type: 3.5mm headphone jack\r\nFlatwire: Stays tangle free even in your pocket\r\nExtra bass: Add extra thump to your music\r\nOne button universal remote to answer and manage your ca', 500, 'boat-bassheads-220-super-extra-bass-original-imaf52pyuyqabbuh.jpeg', 'boat-bassheads-220-super-extra-bass-original-imafj4f5gkefjsnh.jpeg', 'boat-bassheads-220-super-extra-bass-original-imafj4f6yfbmfbb9.jpeg', 2, 0, 10);
+(48, 'boAt BassHeads 220 Super Extra', 'With Mic:Yes\r\nConnector type: 3.5mm headphone jack\r\nFlatwire: Stays tangle free even in your pocket\r\nExtra bass: Add extra thump to your music\r\nOne button universal remote to answer and manage your ca', 500, 'boat-bassheads-220-super-extra-bass-original-imaf52pyuyqabbuh.jpeg', 'boat-bassheads-220-super-extra-bass-original-imafj4f5gkefjsnh.jpeg', 'boat-bassheads-220-super-extra-bass-original-imafj4f6yfbmfbb9.jpeg', 2, 0, 10),
+(49, 'Redmi Note 7 Pro', '4 GB RAM | 64 GB ROM | Expandable Upto 256 GB\r\n16.0 cm (6.3 inch) FHD+ Display\r\n48MP + 5MP | 13MP Front Camera\r\n4000 mAh Li-polymer Battery\r\nQualcomm Snapdragon 675 Processor\r\nQuick Charge 4.0 Support', 12000, 'mi-redmi-note-7-pro-mzb8433in-original-imafj36gfh9gfr7g.jpeg', 'mi-redmi-note-7-pro-mzb8433in-original-imafj36ggzkarsuz.jpeg', 'mi-redmi-note-7-pro-mzb8433in-original-imafj36gnr7bb5hj.jpeg', 1, 4, 50),
+(50, 'Google Pixel 3', '4 GB RAM | 64 GB ROM |\r\n13.97 cm (5.5 inch) FHD+ Display\r\n12.2MP Rear Camera | 8MP + 8MP Dual Front Camera\r\n2915 mAh Battery\r\nQualcomm Snapdragon 845 64-bit Processor', 42999, 'google-pixel-3-na-original-imaf9sxrrrgzhf44.jpeg', 'google-pixel-3-na-original-imaf9sxrrreggeyf.jpeg', 'google-pixel-3-na-original-imaf9sxrngstnywg.jpeg', 1, 6, 10),
+(51, 'boAt Rockerz 400 ', 'With Mic:Yes\r\nBluetooth version: 2.1\r\nWireless range: 10 m\r\nBattery life: 8 hrs | Charging time: 2 hrs\r\nFoldable/ Collapsible: Designed for people always on the move, easy storage and easy to carry\r\nE', 1900, 'boat-rockerz-400-super-extra-bass-original-imafg95ztgz7z8yz.jpeg', 'boat-rockerz-400-super-extra-bass-original-imafhrjefxkgxvug.jpeg', 'boat-rockerz-400-super-extra-bass-original-imafhrjehx3pnnwx.jpeg', 2, 7, 15),
+(52, 'Mi 20000 mAh Power Bank', 'Weight: 430 g | Capacity: 20000 mAh\r\nLithium Polymer Battery | Micro Connector\r\nPower Source: AC Adapter, Battery\r\nCharging Cable Included', 1500, 'power-bank-pb20izm-mi-original-imafjfz64gv5nv9g.jpeg', 'power-bank-pb20izm-mi-original-imafjfz69bvpg2gd.jpeg', 'power-bank-pb20izm-mi-original-imafjfz6hfqcuggx.jpeg', 4, 4, 50),
+(53, 'Syska 10000 mAh Power Bank', 'Capacity: 10000 mAh\r\nLithium Polymer Battery | Micro Connector\r\nPower Source: Rechargeable Battery\r\nCharging Cable Included', 599, 'power-shell-100-1018b-syska-original-imafgjsz8rkwrnhs.jpeg', 'power-shell-100-1018b-syska-original-imafgjszxzshapyd.jpeg', 'power-shell-100-1018b-syska-original-imafgjszy6nazh7h.jpeg', 4, 8, 20),
+(54, 'Philips 11000 mAh Power Bank', 'Weight: 323 g | Capacity: 11000 mAh\r\nLithium-ion Battery | Micro Connector\r\nPower Source: AC Adapter\r\nCharging Cable Included', 999, 'power-bank-dlp6006b-philips-original-imaf7fmkgg8nuvsj.jpeg', 'power-bank-dlp6006b-philips-original-imaf6sp7tryjzrgf.jpeg', 'power-bank-dlp6006b-philips-original-imaf3b7xmhva4jvg.jpeg', 4, 9, 20),
+(55, 'Syska WC-2A / WC-2A-BK 2', 'Wall Charger\r\nSuitable For: Mobile\r\nUniversal Voltage\r\nOutput Current : 2 A', 250, 'syska-wc-2a-original-imaf942z5xd9ptke.jpeg', 'syska-wc-2a-original-imaf8s4ukyzmwzfu.jpeg', 'syska-wc-2a-original-imaf8s4uxhaf7nsm.jpeg', 5, 8, 10),
+(56, 'Sony CP-AD2A/BCABIN5 2.1A', 'Wall Charger\r\nSuitable For: Mobile\r\nUniversal Voltage\r\nOutput Current : 2.1 A', 688, 'sony-cp-ad2a-bcabin5-2-1a-adapter-with-1-5m-usb-a-to-micro-usb-original-imaf9ub7mwsgh8r3.jpeg', 'sony-cp-ad2a-bcabin5-2-1a-adapter-with-1-5m-usb-a-to-micro-usb-original-imaf9ub8hshnna6p.jpeg', 'sony-cp-ad2a-bcabin5-2-1a-adapter-with-1-5m-usb-a-to-micro-usb-original-imaf9ub83wdumhjz.jpeg', 5, 10, 20),
+(57, 'Flipkart SmartBuy Back Cover f', 'Suitable For: Mobile\r\nMaterial: Silicon\r\nTheme: No Theme\r\nType: Back Cover', 159, 'flipkart-smartbuy-rc2-tp-original-imaffwhbeyzhba7b.jpeg', 'flipkart-smartbuy-rc2-tp-original-imaffwhbzdh3j6qh.jpeg', 'flipkart-smartbuy-rc2-tp-original-imaffwhbzxswpgvy.jpeg', 7, 4, 20),
+(58, ' Cover for Mi Redmi 8A', 'Suitable For: Mobile\r\nMaterial: Silicon\r\nTheme: No Theme\r\nType: Back Cover', 150, 'flipkart-smartbuy-r8a-tp-original-imafh4fyhakeazdh.jpeg', 'flipkart-smartbuy-r8a-tp-original-imafhffzgfffccst.jpeg', 'flipkart-smartbuy-r8a-tp-original-imafhffzumefgsyq.jpeg', 7, 4, 10),
+(59, 'JBL Flip 4 Portable Bluetooth ', 'Power Source: USB Chargeable\r\nBattery life: 12 hrs | Charging time: 3.5 hr\r\nBluetooth Version: 4.2\r\nWireless range: 8 m\r\nWireless music streaming via Bluetooth\r\nLong Press Remote Button to Activate Go', 8999, 'jbl-flip-4-original-imafj9zfhvgwajaz.jpeg', 'jbl-flip-4-original-imafj9zfrkg422y6.jpeg', 'jbl-flip-4-original-imafj9zfvrmdt2ah.jpeg', 6, 11, 20);
 
 -- --------------------------------------------------------
 
@@ -351,7 +368,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `brand`
 --
 ALTER TABLE `brand`
-  MODIFY `bid` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `bid` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `chat`
@@ -381,7 +398,7 @@ ALTER TABLE `procategory`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `pid` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `pid` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT for table `tblsubscribers`

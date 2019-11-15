@@ -18,7 +18,7 @@ error_reporting(0);
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="keywords" content="">
 <meta name="description" content="">
-<title>SongArtist</title>
+<title>Online Phone Search</title>
 <!--Bootstrap -->
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
 <!--Custome Style -->
@@ -75,7 +75,7 @@ error_reporting(0);
 $search= $_POST['Search'];
 
 
-$sql = "SELECT * FROM product where productname LIKE '%$search%'";
+$sql = "SELECT * FROM product where productname LIKE '%$search%'" ;
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

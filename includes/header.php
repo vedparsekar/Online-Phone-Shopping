@@ -83,7 +83,7 @@ foreach($results as $result)
                       <ul class="dropdown-menu">
                         <li><a href="product.php?id=1">Phone</a></li>
                         <li><a href="product.php?id=2">headphones</a></li>
-						<li><a href="product.php?id=3">Cases</a></li>
+						<li><a href="product.php?id=7">Cases</a></li>
 						<li><a href="product.php?id=4">Power banks</a></li>	
 						<li><a href="product.php?id=5">Chargers</a></li>	
 						<li><a href="product.php?id=6">Speakers</a></li>						

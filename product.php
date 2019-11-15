@@ -249,7 +249,7 @@ if ($result->num_rows > 0) {
 							 <div class="single-bottom">						
 									<a href="product.php?id=1"><p>Phones</p></a>
 									<a href="product.php?id=2"><p>HeadPhones</p></a>
-									<a href="product.php?id=3"><p>Cases</p></a>
+									<a href="product.php?id=7"><p>Cases</p></a>
 									<a href="product.php?id=4"><p>Powerbanks</p></a>
 									<a href="product.php?id=5"><p>Chargers</p></a>
 									<a href="product.php?id=6"><p>Speakers</p></a>

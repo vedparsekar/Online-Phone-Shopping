@@ -12,6 +12,7 @@ if(isset($_POST['submit']))
   {
 $proname=$_POST['proname'];
 $cn=$_POST['cn'];
+$br=$_POST['br'];
 $prodesc=$_POST['prodes'];
 $price=$_POST['price'];
 $st=$_POST['stock'];
@@ -26,10 +27,11 @@ move_uploaded_file($_FILES["img1"]["tmp_name"],"proimg/".$_FILES["img1"]["name"]
 move_uploaded_file($_FILES["img2"]["tmp_name"],"proimg/".$_FILES["img2"]["name"]);
 //move_uploaded_file($_FILES["img2"]["tmp_name"],"mp3/".$_FILES["img2"]["name"]);
 
-$sql="INSERT INTO product(productname,productdescription,Price,picture,picture1,picture2,catid,stock) VALUES(:proname,:prodesc,:price,:pimage,:pimage1,:pimage2,:cn,:st)";
+$sql="INSERT INTO product(productname,productdescription,Price,picture,picture1,picture2,catid,bid,stock) VALUES(:proname,:prodesc,:price,:pimage,:pimage1,:pimage2,:cn,:br,:st)";
 $query = $dbh->prepare($sql);
 $query->bindParam(':proname',$proname,PDO::PARAM_STR);
 $query->bindParam(':cn',$cn,PDO::PARAM_STR);
+$query->bindParam(':br',$br,PDO::PARAM_STR);
 $query->bindParam(':prodesc',$prodesc,PDO::PARAM_STR);
 $query->bindParam(':price',$price,PDO::PARAM_STR);
 $query->bindParam(':st',$st,PDO::PARAM_STR);
@@ -153,7 +155,7 @@ foreach($results as $result)
 
 <label class="col-sm-2 control-label">Select Brand<span style="color:red">*</span></label>
 <div class="col-sm-4">
-<select class="selectpicker" name="cn" required>
+<select class="selectpicker" name="br" required>
 <option value=""> Select </option>
 <?php $ret="select bid,bname from brand";
 $query= $dbh -> prepare($ret);
