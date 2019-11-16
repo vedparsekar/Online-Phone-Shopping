@@ -25,6 +25,7 @@ error_reporting(0);
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
 <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 <link rel="stylesheet" href="assets/css/owl.carousel.css" type="text/css">
+<!--<link rel="stylesheet" href="css2/style.css" type="text/css">-->
 <link rel="stylesheet" href="assets/css/owl.transitions.css" type="text/css">
 <link href="assets/css/font-awesome.min.css" rel="stylesheet">
 <!-- SWITCHER -->
@@ -155,36 +156,48 @@ else
 	
 
 ?>
+<?php $ret="select * from homepagead";
+				$query= $dbh -> prepare($ret);
+			
+				$query-> execute();
+				$results = $query -> fetchAll(PDO::FETCH_OBJ);
+				if($query -> rowCount() > 0)
+				{
+				foreach($results as $result)
+				{
+					?>
 <div class="slider">
 	  <div class="callbacks_container">
 	     <ul class="rslides" id="slider">
 	         <li>
-				 <div class="banner1">				  
+				<a href="single.php?id=<?php echo htmlentities($result->pid);?>"><div class="banner1">				  
 					  <div class="banner-info">
 					  <h3>Hot New Arrivals</h3>
-					  <p>Redefining value for money | Special Introductory Prices</p>
+					  <!--<p>Redefining value for money | Special Introductory Prices</p>-->
+					  <p><?php echo htmlentities($result->description);?></p>
 					  </div>
-				 </div>
+				</div></a>
 	         </li>
 	         <li>
-				 <div class="banner2">
+				 <a href="single.php?id=60"><div class="banner2">
 					 <div class="banner-info">
 					 <h3>Hot New Arrivals</h3>
 					  <p>Redefining value for money | Special Introductory Prices</p>
 					 </div>
-				 </div>
+				 </div></a>
 			 </li>
 	         <li>
-	             <div class="banner3">
+	            <a href="single.php?id=60"> <div class="banner3">
 	        	 <div class="banner-info">
 	        	 <h3>Hot New Arrivals</h3>
 					  <p>Redefining value for money | Special Introductory Prices</p>
 				 </div>
-				 </div>
+				 </div></a>
 	         </li>
 	      </ul>
 	  </div>
   </div>
+  <?php }}?>
 <!---->
 
 
@@ -207,12 +220,11 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
 		  $c=$row['pid']; 
 			 echo'<div class="col-md-3 feature-grid">'.
-				 "<a href='single.php?id=$c'>".'<img src="admin/proimg/'.$row["picture"].'" style="height:340px;" />	
+				 "<a href='single.php?id=$c'>".'<img src="admin/proimg/'.$row["picture"].'" style="height:400px;" />	
 					 <div class="arrival-info">
 						 <h4>'.$row["productname"].'</h4>
 						 <p>Rs '.$row["price"].'</p>
-						 <span class="pric1"><del>Rs 18000</del></span>
-						 <span class="disc">[12% Off]</span>
+					
 					 </div>
 					 <div class="viw">'.
 						"<a href='single.php?id=$c'>".'<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>View</a>
@@ -251,8 +263,7 @@ if ($result->num_rows > 0) {
 					 <div class="arrival-info">
 						  <h4>'.$row["productname"].'</h4>
 						 <p>Rs '.$row["price"].'</p>
-						 <span class="pric1"><del>Rs 650</del></span>
-						 <span class="disc">[8% Off]</span>
+						
 					 </div>
 					<div class="viw">'.
 						"<a href='single.php?id=$c'>".'<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>View</a>
@@ -290,8 +301,7 @@ if ($result->num_rows > 0) {
 					 <div class="arrival-info">
 						  <h4>'.$row["productname"].'</h4>
 						 <p>Rs '.$row["price"].'</p>
-						 <span class="pric1"><del>Rs 650</del></span>
-						 <span class="disc">[8% Off]</span>
+						 
 					 </div>
 					 <div class="viw">'.
 						"<a href='single.php?id=$c'>".'<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>View</a>
@@ -331,8 +341,7 @@ if ($result->num_rows > 0) {
 					 <div class="arrival-info">
 						  <h4>'.$row["productname"].'</h4>
 						 <p>Rs '.$row["price"].'</p>
-						 <span class="pric1"><del>Rs 650</del></span>
-						 <span class="disc">[8% Off]</span>
+						 
 					 </div>
 					 <div class="viw">'.
 						"<a href='single.php?id=$c'>".'<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>View</a>
@@ -370,8 +379,7 @@ if ($result->num_rows > 0) {
 					 <div class="arrival-info">
 						  <h4>'.$row["productname"].'</h4>
 						 <p>Rs '.$row["price"].'</p>
-						 <span class="pric1"><del>Rs 650</del></span>
-						 <span class="disc">[8% Off]</span>
+						
 					 </div>
 					 <div class="viw">'.
 						"<a href='single.php?id=$c'>".'<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>View</a>
@@ -414,8 +422,7 @@ if ($result->num_rows > 0) {
 					 <div class="arrival-info">
 						  <h4>'.$row["productname"].'</h4>
 						 <p>Rs '.$row["price"].'</p>
-						 <span class="pric1"><del>Rs 650</del></span>
-						 <span class="disc">[8% Off]</span>
+						
 					 </div>
 					 <div class="viw">'.
 						"<a href='single.php?id=$c'>".'<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>View</a>

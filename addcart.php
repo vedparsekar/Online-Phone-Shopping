@@ -201,8 +201,9 @@ if(isset($_POST["place"]))
 	//echo $u;
 $query = $dbh->prepare($sql);
 //$query->bindParam(':q',$q,PDO::PARAM_STR);
-
 $query->execute();
+
+
 echo "<script type='text/javascript'>window.location.href='addcart.php';</script>";
 	
 }
@@ -248,9 +249,6 @@ if ($result->num_rows > 0) {
 		}
 
  
-
-
-
 $sql="INSERT INTO  user_cart(userid,pid,quantity,total) VALUES(:u,:pid,:q,:total)";
 $query = $dbh->prepare($sql);
 $query->bindParam(':u',$u,PDO::PARAM_STR);

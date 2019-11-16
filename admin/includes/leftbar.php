@@ -27,7 +27,7 @@ else{
 ?>				
 				<li><a href="dashboard.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
 			
-			<li><a href="#"><i class="fa fa-sitemap"></i>Admin</a>
+			<li><a href="#"><i class="fa fa-user"></i>Admin</a>
 					<ul>
 						<li><a href="addadmin.php">Add Admin</a></li>
 						<li><a href="manageadmins.php">Manage Admins</a></li>
@@ -45,7 +45,7 @@ else{
 </ul>
 </li>
 
-<li><a href="#"><i class="fa fa-files-o"></i> Brands</a>
+<li><a href="#"><i class="fa fa-industry"></i> Brands</a>
 <ul>
 <li><a href="addbrand.php">Add Brand</a></li>
 <li><a href="managebrand.php">Manage Brands</a></li>
@@ -61,7 +61,7 @@ else{
 					</ul>
 				</li>
 				
-				<li><a href="#"><i class="fa fa-sitemap"></i> Products</a>
+				<li><a href="#"><i class="fa fa-mobile fa-lg"></i> Products</a>
 					<ul>
 						<li><a href="manageproduct.php">Add Products</a></li>
 						<li><a href="emanageproduct.php">Manage Products</a></li>
@@ -76,7 +76,8 @@ else{
 			
 		   
 			<li><a href="manage-subscribers.php"><i class="fa fa-table"></i> Manage Subscribers</a></li>
-			<li><a href="chatdashboard.php"><i class="fa fa-dashboard"></i>Admins Chat</a></li>
+			<li><a href="chatdashboard.php"><i class="fa fa-comments-o fa-lg"></i>Messages</a></li>
+			<li><a href="home.php"><i class="fa fa-comments-o fa-lg"></i>home</a></li>
 <?php }?>
 			</ul>
 		</nav>

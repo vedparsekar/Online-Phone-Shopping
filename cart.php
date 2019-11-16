@@ -184,6 +184,10 @@ echo'<div class="container">
 			</ul> 
 			<div class="clearfix"></div>
 			<div class="clearfix"></div>
+			<select>
+			<option value="cod">Cash on Delivery</option>
+			<option value="online">Online</option>
+			</select>
 			<form method="post" action="cart.php">
 			<!--<a class="order" href="#">Place Order</a>-->
 			<a class="order" href="cart.php"><input type="submit" name="place" value="place order" class="btn btn-xs item_add"/></a>

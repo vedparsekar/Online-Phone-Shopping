@@ -44,7 +44,7 @@ $query->execute();
 	$us=$_GET["u"];
 	$p=$_GET["pr"];
 	$q=1;
-	$sql="UPDATE user_cart set deliverystatus=:q where userid=:us and pid=:p";
+	$sql="UPDATE user_cart set deliverystatus=:q ,dateofdelivery=now() where userid=:us and pid=:p";
 
 $query = $dbh->prepare($sql);
 $query->bindParam(':q',$q,PDO::PARAM_STR);

@@ -140,9 +140,12 @@ if ($result->num_rows > 0) {
  }
  }
 
- 
-
- $sql = "SELECT * from user_cart,product where userid=:u and user_cart.pid=product.pid and cartstatus=1 and deliverystatus=0";
+ if(isset($_REQUEST['oh'])){
+			$sql = "SELECT * from user_cart,product where userid=:u and user_cart.pid=product.pid and cartstatus=1 and deliverystatus=1";
+	}
+	else{
+$sql = "SELECT * from user_cart,product where userid=:u and user_cart.pid=product.pid and cartstatus=1 and deliverystatus=0";
+	}
 $query = $dbh -> prepare($sql);
 $query -> bindParam(':u',$u, PDO::PARAM_STR);
 $query->execute();
@@ -161,8 +164,11 @@ foreach($results as $result)
 											<td><?php echo htmlentities($result->quantity);?></td>
 											<td><?php echo htmlentities($result->price);?></td>
 											<td><?php echo htmlentities($result->total);?></td>
+											<?php if(isset($_REQUEST['oh'])){ ?>
+											<td><a href="productdelivery.php?>" onclick="return confirm('Do you want to return');"></i> Return</a></td>
+											<?php } else {?>
 											<td><a href="productdelivery.php?del=<?php echo $result->userid;?>&pid=<?php echo $result->pid;?>" onclick="return confirm('Do you want to delete');"><i class="fa fa-close"></i> Cancel order</a></td>
-	
+											<?php }?>
 										</tr>
 <?php $cnt=$cnt+1; }} ?>
 										

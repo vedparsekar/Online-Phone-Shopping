@@ -11,10 +11,10 @@ else{
 if(isset($_POST['submit']))
 {
 	
-$Chat=$_POST['Chat'];
+$chat=$_POST['Chat'];
 $admin=$_POST['admin'];
 $user=$_POST['user'];
-$sql="INSERT INTO  chat(chat,admin,User) VALUES(:Chat,:admin,:user)";
+$sql="INSERT INTO  chat(chat,admin,user) VALUES(:chat,:admin,:user)";
 $query = $dbh->prepare($sql);
 $query->bindParam(':Chat',$Chat,PDO::PARAM_STR);
 $query->bindParam(':admin',$admin,PDO::PARAM_STR);
@@ -34,7 +34,7 @@ $lastInsertId = $dbh->lastInsertId();
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>Online Dpwnload | Admin Dashboard</title>
+	<title>Online Shopping | Admin Dashboard</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
