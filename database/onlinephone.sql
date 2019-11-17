@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 16, 2019 at 08:21 PM
+-- Generation Time: Nov 17, 2019 at 07:00 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.0.25
 
@@ -283,7 +283,11 @@ INSERT INTO `product` (`pid`, `productname`, `productdescription`, `price`, `pic
 (58, ' Cover for Mi Redmi 8A', 'Suitable For: Mobile\r\nMaterial: Silicon\r\nTheme: No Theme\r\nType: Back Cover', 150, 'flipkart-smartbuy-r8a-tp-original-imafh4fyhakeazdh.jpeg', 'flipkart-smartbuy-r8a-tp-original-imafhffzgfffccst.jpeg', 'flipkart-smartbuy-r8a-tp-original-imafhffzumefgsyq.jpeg', 7, 4, 10),
 (59, 'JBL Flip 4 Portable Bluetooth ', 'Power Source: USB Chargeable\r\nBattery life: 12 hrs | Charging time: 3.5 hr\r\nBluetooth Version: 4.2\r\nWireless range: 8 m\r\nWireless music streaming via Bluetooth\r\nLong Press Remote Button to Activate Go', 8999, 'jbl-flip-4-original-imafj9zfhvgwajaz.jpeg', 'jbl-flip-4-original-imafj9zfrkg422y6.jpeg', 'jbl-flip-4-original-imafj9zfvrmdt2ah.jpeg', 6, 11, 20),
 (60, 'mi Note 5 Pro ', '4 GB RAM | 64 GB ROM | Expandable Upto 128 GB\r\n15.21 cm (5.99 inch) Full HD+ Display\r\n12MP + 5MP | 20MP Front Camera\r\n4000 mAh Li Polymer Battery\r\nQualcomm Snapdragon 636 Processor', 13999, 'redmi-note-5-pro-mzb6086in-original-imaf2g8zp8ubadzb.jpeg', 'mi-redmi-note-5-pro-mzb6082in-mzb6090in-original-imafdb6zh4wv3gvu.jpeg', 'redmi-note-5-pro-mzb6082in-original-imaf2g8n853nqhfv.jpeg', 1, 4, 50),
-(61, 'Apple iPhone XR', '64 GB ROM |\r\n15.49 cm (6.1 inch) Display\r\n12MP Rear Camera | 7MP Front Camera\r\nA12 Bionic Chip Processor\r\niOS 13 Compatible', 47900, 'apple-iphone-xr-mry52hn-a-original-imafa6zkfgwpnsgz.jpeg', 'apple-iphone-xr-mryd2hn-a-original-imafa6zks7qma9se.jpeg', 'apple-iphone-xr-mryd2hn-a-original-imafa6zkshgmgx8n.jpeg', 1, 5, 20);
+(61, 'Apple iPhone XR', '64 GB ROM |\r\n15.49 cm (6.1 inch) Display\r\n12MP Rear Camera | 7MP Front Camera\r\nA12 Bionic Chip Processor\r\niOS 13 Compatible', 47900, 'apple-iphone-xr-mry52hn-a-original-imafa6zkfgwpnsgz.jpeg', 'apple-iphone-xr-mryd2hn-a-original-imafa6zks7qma9se.jpeg', 'apple-iphone-xr-mryd2hn-a-original-imafa6zkshgmgx8n.jpeg', 1, 5, 20),
+(62, 'JBL Go PLUS ', 'Power Source: AC Adaptor & Battery\r\nBattery life: 5 hr | Charging time: 2.5 hr\r\nBluetooth Version: 4.1\r\nWireless range: 8 m\r\nWireless music streaming via Bluetooth\r\nLong Press Remote Button to Activat', 1600, 'jbl-jblgoplusblueu-original-imafdzu6jvbaxsfb.jpeg', 'jbl-jblgoplusblueu-original-imafjf6hb3qpzxs6.jpeg', 'jbl-jblgoplusblueu-original-imafjf6hjgvhsmyt.jpeg', 6, 11, 50),
+(63, 'JBL Flip 3 Splashproof ', 'Power Source: Battery\r\nWireless music streaming via Bluetooth\r\n10 hours playtime with 3000mAH Rechargeable Battery\r\nIPX5 Splashproof with durable fabric material\r\nDual passive Bass radiators', 5999, 'jbl-flip-3-splash-proof-original-imafkh5yj6mfkbdu.jpeg', 'jbl-flip-3-splash-proof-original-imafkfxznyxktbwv.jpeg', 'jbl-flip-3-splash-proof-original-imafkfxzz4uegsdf.jpeg', 6, 11, 30),
+(64, 'JBL GO2 Portable', 'Power Source: AC Adapter and Cable\r\nBattery life: 5 hrs | Charging time: 2.5 hrs\r\nBluetooth Version: 4.1\r\nWireless range: 8 m\r\nWireless music streaming via Bluetooth\r\nLong Press Remote Button to Activ', 2334, 'jbl-go-2-original-imafh4b8qqftgmvv.jpeg', 'jbl-go-2-original-imafh4b8chwghagy.jpeg', 'jbl-go-2-original-imafh4b8gmpvgajn.jpeg', 6, 11, 10),
+(65, 'Back Cover for Nokia 6.1 Plus ', 'Suitable For: Mobile\r\nMaterial: Silicon\r\nTheme: No Theme\r\nType: Back Cover', 150, 'flipkart-smartbuy-n6-1p-mtpu-original-imafbeezsnyazzn3.jpeg', 'flipkart-smartbuy-n6-1p-mtpu-original-imafbeezjbnv647f.jpeg', 'flipkart-smartbuy-n6-1p-mtpu-original-imafbeezzwvj3hfu.jpeg', 7, 1, 10);
 
 -- --------------------------------------------------------
 
@@ -485,7 +489,7 @@ ALTER TABLE `procategory`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `pid` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `pid` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT for table `pro_order`
@@ -509,7 +513,7 @@ ALTER TABLE `tblusers`
 -- AUTO_INCREMENT for table `user_cart`
 --
 ALTER TABLE `user_cart`
-  MODIFY `cartid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+  MODIFY `cartid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

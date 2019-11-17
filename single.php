@@ -182,8 +182,10 @@ if ($result->num_rows > 0) {
 			     <div class="col-md-5 single-top-in simpleCart_shelfItem">
 					  <div class="single-para ">
 						 <h4>'.$row["productname"].' </h4><br/>							
-							<h6 class="item_price">Rs '.$row["price"].'</h6>							
-							<p class="para">'.$row["productdescription"].'</p>
+							<h6 class="item_price">Rs '.$row["price"].'</h6>
+							</br>
+							<p>'.$row["productdescription"].'</p>							
+						
 							<div class="prdt-info-grid">
 								 
 							</div>';

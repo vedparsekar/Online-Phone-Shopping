@@ -316,7 +316,7 @@ if ($result->num_rows > 0) {
   else {
     echo "0 results";
 }
-echo'<div class="clearfix"></div><a href="product.php?id=5"><button type=button class="btn btn-xs">View all</button></a>
+echo'<div class="clearfix"></div><a href="product.php?id=7"><button type=button class="btn btn-xs">View all</button></a>
 		 </div>';	
 
 
@@ -356,7 +356,7 @@ if ($result->num_rows > 0) {
   else {
     echo "0 results";
 }
-echo'<div class="clearfix"></div><a href="product.php?id=3"><button type=button class="btn btn-xs">View all</button></a>
+echo'<div class="clearfix"></div><a href="product.php?id=4"><button type=button class="btn btn-xs">View all</button></a>
 		 </div>';	
 
 echo '<br/><h5>Chargers</h5>
@@ -394,7 +394,7 @@ if ($result->num_rows > 0) {
   else {
     echo "0 results";
 }
-echo'<div class="clearfix"></div><a href="product.php?id=4"><button type=button class="btn btn-xs">View all</button></a>
+echo'<div class="clearfix"></div><a href="product.php?id=5"><button type=button class="btn btn-xs">View all</button></a>
 		 </div>';	
 
 
@@ -418,7 +418,7 @@ if ($result->num_rows > 0) {
 		
 		 $c=$row['pid']; 
 			 echo'<div class="col-md-3 feature-grid">'.
-				 "<a href='single.php?id=$c'>".'<img src="admin/proimg/'.$row["picture"].'" style="height:380px;" />
+				 "<a href='single.php?id=$c'>".'<img src="admin/proimg/'.$row["picture"].'" style="height:360px;" />
 					 <div class="arrival-info">
 						  <h4>'.$row["productname"].'</h4>
 						 <p>Rs '.$row["price"].'</p>
@@ -437,7 +437,7 @@ if ($result->num_rows > 0) {
   else {
     echo "0 results";
 }
-echo'<div class="clearfix"></div><a href="product.php?id=3"><button type=button class="btn btn-xs">View all</button></a>
+echo'<div class="clearfix"></div><a href="product.php?id=6"><button type=button class="btn btn-xs">View all</button></a>
 		 </div>';	
 
 

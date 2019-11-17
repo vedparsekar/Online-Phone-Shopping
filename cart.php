@@ -91,7 +91,7 @@ if ($result->num_rows > 0) {
 			 {
 				  $p=$row["sum(quantity)"];
 			 
-			 $ps=$row["sum(total)"]+150;
+			 $ps=$row["sum(total)"]+100;
 			 }
 			 else
 			 {
@@ -158,8 +158,8 @@ if ($result->num_rows > 0) {
 		if($row["sum(total)"]!=0)
 		{
 			$ps=$row["sum(total)"];
-	$s=$row["sum(total)"]+150;
-	$d=150;
+	$s=$row["sum(total)"]+100;
+	$d=100;
 		}
 		else{
 			$s=0;
@@ -257,7 +257,7 @@ if ($result->num_rows > 0) {
 								<li><p>Qty : 1</p></li>
 							</ul>
 							<div class="delivery">
-								 <p>Service Charges : Rs.150.00</p>
+							
 								 <span>Delivery in 4-5 days</span>
 								 <div class="clearfix"></div>
 							</div>								

@@ -81,12 +81,17 @@ foreach($results as $result)
 		  <li class="dropdown">
                   <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories</a>
                       <ul class="dropdown-menu">
-                        <li><a href="product.php?id=1">Phone</a></li>
-                        <li><a href="product.php?id=2">headphones</a></li>
-						<li><a href="product.php?id=7">Cases</a></li>
-						<li><a href="product.php?id=4">Power banks</a></li>	
-						<li><a href="product.php?id=5">Chargers</a></li>	
-						<li><a href="product.php?id=6">Speakers</a></li>						
+					  <?php $ret="select * from procategory";
+						$query= $dbh -> prepare($ret);
+						$query-> execute();
+						$results = $query -> fetchAll(PDO::FETCH_OBJ);
+						if($query -> rowCount() > 0)
+						{
+							foreach($results as $result)
+								{
+							?>	
+                        <li><a href="product.php?id=<?php echo htmlentities($result->catid);?>"><?php echo htmlentities($result->procatname);?></a></li>
+						<?php }}?>
                      </ul>
           </li>
 		  <li><a href="index.php">Products</a></li>
